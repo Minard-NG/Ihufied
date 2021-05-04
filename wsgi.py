@@ -1,1 +1,1 @@
-from app import ihufied
+from app import create_app
