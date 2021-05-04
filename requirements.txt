@@ -25,3 +25,4 @@ wtforms-sqlalchemy
 python-resize-image
 Pillow
 Flask-Passlib
+gunicorn
