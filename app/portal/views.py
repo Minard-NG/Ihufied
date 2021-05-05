@@ -2,7 +2,7 @@ from flask import render_template, redirect, url_for, flash, request
 from flask_login import login_required,current_user
 from ihufied import db
 from . import portal
-from app.utils import save_picture, delete_picture,update_picture
+from app.utils import save_picture, update_picture
 from passlib.hash import sha256_crypt as sha256
 from app.models import User, Faculty, Department, Course
 from app.portal.forms import MakeFacultyForm, MakeDepartmentForm, MakeCourseForm, MakeStudentForm, RegisterStudentCourse,EditStudentCourses
@@ -27,7 +27,7 @@ def register_student():
 			flash('Student registered successfully.', 'success')
 			return redirect(url_for('portal.register_student_courses'))
 		except Exception as e:
-			delete_picture(form.image.data)
+			#delete_picture(form.image.data)
 			flash(str(e), 'warning')
 		return redirect(url_for('portal.register_student'))
 	return render_template('/portal/register_student.html', form=form)
