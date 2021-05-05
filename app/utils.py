@@ -45,4 +45,5 @@ def update_picture (form_picture):
 
 def delete_picture(pic_name):
 	picture_path = os.path.join(app.root_path, 'static/images', pic_name)
-	os.remove(picture_path)
+    if picture_path:
+	        os.remove(picture_path)
