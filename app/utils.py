@@ -13,7 +13,7 @@ def save_picture(form_picture):
 	_, f_ext = os.path.splitext(form_picture.filename)
 	picture_fn = random_hex + f_ext
 	picture_path = os.path.join("https://ihufied.herokuapp.com/", "static/images", picture_fn)
-	print('the root path is {}'.format(app.root_path))
+	print('the root path is {}'.format(app))
 	i = Image.open(form_picture)
 	i = resizeimage.resize_cover(i, [300, 250], validate=False)
 	i.save(picture_path)
