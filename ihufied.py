@@ -1,11 +1,11 @@
 import os
 import click
-from app import app, db
+from app import create_app, db
 from app.models import Admin
 
-#app = create_app(os.environ.get('FLASK_CONFIG') or 'default')
+app = create_app(os.environ.get('FLASK_CONFIG') or 'default')
 
-print('the root path from ihufied.py is {}'.format(app.root_path))
+
 
 @app.shell_context_processor
 def make_shell_context():

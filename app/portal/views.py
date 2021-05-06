@@ -1,6 +1,6 @@
 from flask import render_template, redirect, url_for, flash, request
 from flask_login import login_required,current_user
-from app import db
+from ihufied import db
 from . import portal
 from app.utils import save_picture, update_picture
 from passlib.hash import sha256_crypt as sha256
