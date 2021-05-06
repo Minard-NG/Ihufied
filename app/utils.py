@@ -2,6 +2,7 @@ import secrets
 import random
 import os
 from PIL import Image
+from app import create_app
 import base64
 from resizeimage import resizeimage
 
