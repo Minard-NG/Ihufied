@@ -12,7 +12,7 @@ def save_picture(form_picture):
 	random_hex = secrets.token_hex(8)
 	_, f_ext = os.path.splitext(form_picture.filename)
 	picture_fn = random_hex + f_ext
-	picture_path = os.path.join("Ihufied\app\\", "static/images", picture_fn)
+	picture_path = os.path.join("Ihufied/app/", "static/images", picture_fn)
 	print('the root path is {}'.format(app.root_path))
 	i = Image.open(form_picture)
 	i = resizeimage.resize_cover(i, [300, 250], validate=False)
@@ -30,7 +30,7 @@ def update_picture (form_picture):
     # os.path.splitext returns the filename and the extention if it a file
     _, f_ext = os.path.splitext(form_picture.filename)
     picture_fn = random_hex + f_ext
-    picture_path = os.path.join("Ihufied\app\\", "static/images", picture_fn)
+    picture_path = os.path.join("Ihufied/app/", "static/images", picture_fn)
 
     # this is where we resize the pictures which gives us a new image i
     output_size = (400, 400)
