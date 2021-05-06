@@ -2,11 +2,11 @@ import secrets
 import random
 import os
 from PIL import Image
-from app import create_app
+from app import app
 import base64
 from resizeimage import resizeimage
 
-app = create_app(os.environ.get('FLASK_CONFIG') or 'default')
+#app = create_app(os.environ.get('FLASK_CONFIG') or 'default')
 
 def save_picture(form_picture):
 	random_hex = secrets.token_hex(8)
