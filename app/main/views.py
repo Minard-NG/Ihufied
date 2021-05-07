@@ -27,7 +27,7 @@ def getuser(course_title):
             students['lastname'] = student.lastname
             students['reg_no'] = student.regnumber
             #convert the students image stored in bytes to str so it can be passable with json on line 41
-            students['img'] = student.image.decode('utf-8') 
+            students['img'] = student.image 
             students_list.append(students)
         if students_list == []:
             return 'No student registered!'
