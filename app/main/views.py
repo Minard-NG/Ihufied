@@ -34,8 +34,8 @@ def getuser(course_title):
         else:
             print(students_list)
             return json.dumps(students_list)
-    except AttributeError:
-        return 'Course not found!'
+    except Exception as e:
+        return str(e)
 
 #getting only students in that department registered can be done by inserting the id into the routing channel
 
