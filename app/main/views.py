@@ -19,7 +19,6 @@ def getuser(course_title):
     try:
         course_title= course_title.upper()
         course = Course.query.filter_by(title=course_title).first()
-        print(course)
         users = course.course_subscribers
         students_list = []
         for student in users:
@@ -33,6 +32,7 @@ def getuser(course_title):
         if students_list == []:
             return 'No student registered!'
         else:
+            print(students_list)
             return json.dumps(students_list)
     except AttributeError:
         return 'Course not found!'
