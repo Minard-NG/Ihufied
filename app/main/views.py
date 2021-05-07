@@ -1,6 +1,9 @@
 from datetime import datetime
 from flask import render_template
 from flask_login import login_required
+from app.models import Course
+import json
+import base64
 from . import main
 
 
