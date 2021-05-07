@@ -19,6 +19,7 @@ def getuser(course_title):
 	try:
 		course_title= course_title.upper()
 		course = Course.query.filter_by(title=course_title).first()
+        print(course)
 		users = course.course_subscribers
 		students_list = []
 		for student in users:
