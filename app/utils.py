@@ -30,7 +30,7 @@ def insert_picture(database_picture, picture_name):
     # filename = 'app/static/images/{}'.format(picture_name)
     with open(picture_path, 'wb') as f:
         f.write(imgdata)
-    print(picture_path)x
+    print(picture_path)
 
 
 def update_picture (form_picture):
