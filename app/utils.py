@@ -25,12 +25,12 @@ def save_picture(form_picture):
 
 def insert_picture(database_picture, picture_name):
     #this function is to insert the picture back in the images folder so it can be displayed on the client-side when called in heroku
-    imgdata = base64.b64decode(database_picture)
+    imgdata = base64.decodestring(database_picture)
     picture_path = os.path.join(app.root_path, "static/images", picture_name)
     # filename = 'app/static/images/{}'.format(picture_name)
     with open(picture_path, 'wb') as f:
         f.write(imgdata)
-    print(picture_path)
+    print(picture_path)x
 
 
 def update_picture (form_picture):
