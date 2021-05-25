@@ -60,7 +60,8 @@ def remote_monitoring():
 def registered_students():
 	page = request.args.get('page', 1 , type=int)
 	student= User.query.order_by(User.lastname.asc()).paginate(page=page, per_page=25)
-	for i in student:
+	pupils = User.query.order_by(User.lastname.asc())
+	for i in pupils:
     		insert_picture(i.image,i.image_name)
 	if request.method == 'POST':
 		if request.form['detail']:
