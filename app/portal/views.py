@@ -2,7 +2,7 @@ from flask import render_template, redirect, url_for, flash, request
 from flask_login import login_required,current_user
 from ihufied import db
 from . import portal
-from app.utils import save_picture, update_picture
+from app.utils import save_picture, update_picture, insert_picture
 from passlib.hash import sha256_crypt as sha256
 from app.models import User, Faculty, Department, Course
 from app.portal.forms import MakeFacultyForm, MakeDepartmentForm, MakeCourseForm, MakeStudentForm, RegisterStudentCourse,EditStudentCourses
@@ -60,6 +60,8 @@ def remote_monitoring():
 def registered_students():
 	page = request.args.get('page', 1 , type=int)
 	student= User.query.order_by(User.lastname.asc()).paginate(page=page, per_page=25)
+	for i in student:
+    		insert_picture(i.image,i.image_name)
 	if request.method == 'POST':
 		if request.form['detail']:
 				the_student= request.form['detail']
